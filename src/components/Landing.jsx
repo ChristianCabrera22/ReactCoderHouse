@@ -1,29 +1,15 @@
-import React, { useState } from 'react'
-//import MenuNav from './MenuNav/MenuNav'
-const Landing = () => {
+import React from 'react'
+import ItemListContainer from './ItemListContainer'
+import MenuNav from './MenuNav/MenuNav'
 
-  const [contador, setContador] = useState(0)
-  const [ultimo, setUltimo] = useState()
-  
-  const hizoClick = () => {
-    setContador(contador+1);
-    setUltimo(new Date().toLocaleString())
-  }
+export const Landing = () => {
   return (
-    // <MenuNav/>
-    <div>
-    
-    <p>Has clickeando: {contador}</p>
-    {ultimo ?
-    <p>Ultimo Click: {ultimo}</p>
-    :
-    <p>No hay Clicks</p>
-    }
-    
-    
-    <button onClick={hizoClick}>Clickeame!!</button>
-    </div>
+    <React.StrictMode>
+        <MenuNav/>
+        <ItemListContainer greeting="Bienvenido Papu, aca van los productos"/>
+    </React.StrictMode>
   )
 }
-
 export default Landing
+
+
