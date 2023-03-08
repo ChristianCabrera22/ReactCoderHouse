@@ -1,0 +1,10 @@
+section {
+    background-color: #eee;
+}
+.br15 {
+    border-radius: 15px;
+}
+.br20{
+    border-top-left-radius: 15px; 
+    border-top-right-radius: 15px
+}

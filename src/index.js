@@ -1,15 +1,27 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
 import reportWebVitals from './reportWebVitals';
-import Landing from './components/Landing';
-import CartWidget from './components/CartWidget/CartWidget';
-
+import MenuNav from './components/NavBar';
+import ItemListContainer from './components/ItemListContainer';
+import ItemDetailContainer from './components/ItemDetailContainer';
+import {BrowserRouter, Routes, Route} from 'react-router-dom';
+import Cart from './components/Cart';
+import Contacto from './components/Contacto';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Landing/>
+    <BrowserRouter>
+      <MenuNav />
+      <Routes>
+        <Route path='/' element={<ItemListContainer/>}/>
+        <Route path='/inicio' element={<ItemListContainer/>}/>
+        <Route path='/categoria/:categoriaId' element={<ItemListContainer/>}/>
+        <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>}/>
+        <Route path='/cart' element={<Cart/>}/>
+        <Route path='/contacto' element={<Contacto/>}/>
+      </Routes>
+    </BrowserRouter>
   </React.StrictMode>
 );
 
