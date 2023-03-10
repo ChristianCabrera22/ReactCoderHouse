@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
             }, 500)
         })
         getData.then(res=> setData(res.find(prods=>prods.id===parseInt(detalleId))))
-    }, [])
+    }, [detalleId])
 
   return (
     <ItemDetail data={data}/>
