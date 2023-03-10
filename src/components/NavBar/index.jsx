@@ -4,30 +4,30 @@ import {NavLink} from 'react-router-dom'
 import './NavBar.css'
 const MenuNav = () => {
   return (
-    <nav class="navbar navbar-expand-lg navbar-light bg-light px-5">
-  <navLink class="navbar-brand" href='/'>LaLocura</navLink>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
+    <nav className="navbar navbar-expand-lg navbar-light bg-light px-5">
+  <NavLink className="navbar-brand" href='/'>LaLocura</NavLink>
+  <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span className="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <div class="nav-link"><NavLink class="nav-link nav-link" to='/'>Inicio<span class="sr-only"></span></NavLink></div>
+  <div className="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul className="navbar-nav mr-auto">
+      <li className="nav-item active">
+        <div className="nav-link"><NavLink className="nav-link nav-link" to='/'>Inicio<span className="sr-only"></span></NavLink></div>
       </li>
-      <li class="nav-item">
-      <div class="nav-link text-dark">
-        <NavLink to='/Contacto' class="nav-link">Contacto</NavLink></div>
+      <li className="nav-item">
+      <div className="nav-link text-dark">
+        <NavLink to='/Contacto' className="nav-link">Contacto</NavLink></div>
       </li>
-      <li class="nav-item">
-      <div class="nav-link">
-        <NavLink class="nav-link" to='/categoria/remera'>Remeras</NavLink>
+      <li className="nav-item">
+      <div className="nav-link">
+        <NavLink className="nav-link" to='/categoria/remera'>Remeras</NavLink>
       </div>
       </li>
-      <li class="nav-item">
-      <div class="nav-link"><NavLink class="nav-link" to='/categoria/chomba'>Chombas</NavLink></div>
+      <li className="nav-item">
+      <div className="nav-link"><NavLink className="nav-link" to='/categoria/chomba'>Chombas</NavLink></div>
       </li>
-      <li class="nav-item">
-      <div class="nav-link"><NavLink class="nav-link" to='/cart'><CartWidget/></NavLink></div>
+      <li className="nav-item">
+      <div className="nav-link"><NavLink className="nav-link" to='/cart'><CartWidget/></NavLink></div>
       </li>
     </ul>
   </div>
