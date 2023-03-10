@@ -26,7 +26,7 @@ const Item = (prods) => {
               <div class="d-flex justify-content-between mb-2">
                 <p class="text-muted mb-0">Disponible: <span class="fw-bold">{prods.producto.stock}</span></p>
                 <div class="ms-auto text-warning">
-                  <Link class="btn-primary" to={`detalle/${prods.producto.id}`}>Detalles</Link>
+                  <Link class="btn-primary" to={`/detalle/${prods.producto.id}`}>Detalles</Link>
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
                   <i class="fa fa-star"></i>
