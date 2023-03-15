@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Title from '../Title';
-// import ItemCount from '../ItemCount'
 import ItemList from '../ItemList';
 import {useParams} from 'react-router-dom'
 
@@ -34,13 +33,10 @@ const ItemListContainer = (props) => {
   }, [categoriaId])
 
 
-/*   const onAdd=(cant)=>{
-    alert("cantidad: "+cant)
-  } */
+
   return (
     <>
     <Title greeting="Bienvenido!"/>
-    {/* <ItemCount i={1} stock={5} onAdd={onAdd}/> */}
     <ItemList data={data}/>
     </>
   )
