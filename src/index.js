@@ -8,7 +8,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart';
 import Contacto from './components/Contacto';
 import CartProvider from './context/CartContext';
-
+// import './components/styles/style.css'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,6 +18,7 @@ root.render(
         <MenuNav />
           <Routes>
             <Route path='/' element={<ItemListContainer/>}/>
+            <Route path='/ReactCoderHouse' element={<ItemListContainer/>}/>
             <Route path='/inicio' element={<ItemListContainer/>}/>
             <Route path='/categoria/:categoriaId' element={<ItemListContainer/>}/>
             <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>}/>

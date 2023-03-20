@@ -1,0 +1,184 @@
+.ftco-section {
+    padding: 7em 0; }
+
+.heading-section {
+    font-size: 28px;
+    color: #000; }
+
+    .wrapper {
+        width: 100%; }
+
+        .contact-wrap {
+            background: #fff; }
+
+            .dbox {
+                width: 100%;
+                margin-bottom: 25px; }
+                @media (max-width: 767.98px) {
+                  .dbox {
+                    margin-bottom: 25px !important;
+                    padding: 0 20px; } }
+                .dbox p {
+                  margin-bottom: 0; }
+                  .dbox p span {
+                    font-weight: 500;
+                    color: #000; }
+                  .dbox p a {
+                    color: #46b5d1; }
+                .dbox .icon {
+                  width: 60px;
+                  height: 60px;
+                  border-radius: 50%;
+                  background: #46b5d1;
+                  margin: 0 auto;
+                  margin-bottom: 20px; }
+                  .dbox .icon span {
+                    font-size: 20px;
+                    color: #fff; }
+                .dbox .text {
+                  width: 100%; }
+                  .d-flex {
+                    display: -webkit-box !important;
+                    display: -ms-flexbox !important;
+                    display: flex !important; }
+
+
+
+                    .w-100 {
+                        width: 100% !important; }
+
+                        .no-gutters {
+                            margin-right: 0;
+                            margin-left: 0; }
+                            .no-gutters > .col,
+                            .no-gutters > [class*="col-"] {
+                              padding-right: 0;
+                              padding-left: 0; }
+
+                              .contact-wrap {
+                                background: #fff; }
+
+
+                                #message {
+                                    resize: vertical; }
+                                  
+                                  #form-message-warning, #form-message-success {
+                                    display: none; }
+                                  
+                                  #form-message-warning {
+                                    color: red; }
+                                  
+                                  #form-message-success {
+                                    color: #28a745;
+                                    font-size: 18px;
+                                    font-weight: 500; }
+
+                                    .contactForm .label {
+                                        color: #000;
+                                        text-transform: uppercase;
+                                        font-size: 12px;
+                                        font-weight: 600; }
+                                      
+                                      .contactForm .form-control {
+                                        border: none;
+                                        border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+                                        padding: 0; }
+                                      
+                                      #contactForm .error {
+                                        color: red;
+                                        font-size: 12px; }
+                                      
+                                      #contactForm .form-control {
+                                        font-size: 16px; }
+                                        .form-group {
+                                            margin-bottom: 1rem; }
+
+                                            .form-inline {
+                                                display: -webkit-box;
+                                                display: -ms-flexbox;
+                                                display: flex;
+                                                -webkit-box-orient: horizontal;
+                                                -webkit-box-direction: normal;
+                                                -ms-flex-flow: row wrap;
+                                                flex-flow: row wrap;
+                                                -webkit-box-align: center;
+                                                -ms-flex-align: center;
+                                                align-items: center; }
+                                                .form-inline .form-check {
+                                                  width: 100%; }
+                                                @media (min-width: 576px) {
+                                                  .form-inline label {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    -webkit-box-pack: center;
+                                                    -ms-flex-pack: center;
+                                                    justify-content: center;
+                                                    margin-bottom: 0; }
+                                                  .form-inline .form-group {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-flex: 0;
+                                                    -ms-flex: 0 0 auto;
+                                                    flex: 0 0 auto;
+                                                    -webkit-box-orient: horizontal;
+                                                    -webkit-box-direction: normal;
+                                                    -ms-flex-flow: row wrap;
+                                                    flex-flow: row wrap;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    margin-bottom: 0; }
+                                                  .form-inline .form-control {
+                                                    display: inline-block;
+                                                    width: auto;
+                                                    vertical-align: middle; }
+                                                  .form-inline .form-control-plaintext {
+                                                    display: inline-block; }
+                                                  .form-inline .input-group,
+                                                  .form-inline .custom-select {
+                                                    width: auto; }
+                                                  .form-inline .form-check {
+                                                    display: -webkit-box;
+                                                    display: -ms-flexbox;
+                                                    display: flex;
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    -webkit-box-pack: center;
+                                                    -ms-flex-pack: center;
+                                                    justify-content: center;
+                                                    width: auto;
+                                                    padding-left: 0; }
+                                                  .form-inline .form-check-input {
+                                                    position: relative;
+                                                    -ms-flex-negative: 0;
+                                                    flex-shrink: 0;
+                                                    margin-top: 0;
+                                                    margin-right: 0.25rem;
+                                                    margin-left: 0; }
+                                                  .form-inline .custom-control {
+                                                    -webkit-box-align: center;
+                                                    -ms-flex-align: center;
+                                                    align-items: center;
+                                                    -webkit-box-pack: center;
+                                                    -ms-flex-pack: center;
+                                                    justify-content: center; }
+                                                  .form-inline .custom-control-label {
+                                                    margin-bottom: 0; } }
+                                              
+                                                    @media (max-width: 767.98px) {
+                                                        .info-wrap {
+                                                          height: 400px; } }
+                                                          img {
+                                                            vertical-align: middle;
+                                                            border-style: none;
+                                                            
+                                                        }
+                                                    .img {
+                                                        width: 400px;
+                                                    }

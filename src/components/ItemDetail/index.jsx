@@ -1,15 +1,17 @@
 import React, {useState} from 'react'
+import {useCartContext} from '../../context/CartContext';
 import './ItemDetail.css'
 import ItemCount from '../ItemCount'
 import { Link } from 'react-router-dom'
-const ItemDetail= ({data}) => {
+export const ItemDetail= ({data}) => {
 
   
   const [goToCart, setGoToCart] = useState(false)
-
+  const {addProduct} = useCartContext()
 
   const onAdd=(cant)=>{
     setGoToCart(true)
+    addProduct(data,cant)
   }
 
 
@@ -68,6 +70,7 @@ const ItemDetail= ({data}) => {
             <div class="d-flex justify-content-between align-items-center pb-2 mb-1">
             </div>
             { goToCart ? <Link to='/cart' className='btn btn-success px-2 mt-1 text-center'>Terminar Compra</Link> : <ItemCount i={1} stock={data.stock} onAdd={onAdd}/>}
+            { goToCart? alert("TRUE") : alert("FALSE")}
           </div>
         </div>
       </div>

@@ -1,7 +1,6 @@
-.counter {
-    width: fit-content;
-    color: black;
-    margin: auto;
-    padding: 1rem;
-    text-align: center;
+.disabled {
+ display: none;
+}
+.enabled {
+    display: block;
 }

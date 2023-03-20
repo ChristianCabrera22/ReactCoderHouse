@@ -1,10 +1,6 @@
 import React from 'react'
 import CartWidget from '../CartWidget/CartWidget'
 import {NavLink} from 'react-router-dom'
-import Container from 'react-bootstrap/Container';
-import Nav from 'react-bootstrap/Nav';
-import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
 
 
 
@@ -12,7 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 const MenuNav = () => {
   return (
       <nav className="navbar navbar-expand navbar-light bg-light px-5">
-  <NavLink className="navbar-brand" href='/'>LaLocura</NavLink>
+  <NavLink className="navbar-brand" to='/'>LaLocura</NavLink>
   <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
     <span className="navbar-toggler-icon"></span>
   </button>
