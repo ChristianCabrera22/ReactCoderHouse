@@ -1,19 +1,35 @@
 import React from 'react'
+import { useCartContext } from '../../context/CartContext'
 import './style.css'
+import { Link } from 'react-router-dom'
+import ItemCart from '../itemCart'
 export const Cart = (product) => {
-  return (
+    const {cart, totalPrice} =useCartContext()
+ 
+
+
+    if (cart.length === 0) {
+return (
     <>
     <h2 className='mt-5 px-4'>Hola, estoy vacio como tu billetera</h2>
+    <Link className='mt-5 px-3' to="/">Continuar comprando</Link>
+    </>
+    )
+} else {
+
+
+  return (
+    <>
     <body className='snippet-body'>
-    <div class="container-fluid">
-      <a className='px-4 mr-4 ' href="/">---------- Continuar compra</a>
-<div class="row">
-<aside class="col-lg-9">
-<div class="card">
-<div class="table-responsive">
-<table class="table table-borderless table-shopping-cart">
-<thead class="text-muted">
-    <tr class="small text-uppercase">
+    <div className="container-fluid">
+    
+<div className="row">
+<aside className="col-lg-9">
+<div className="card">
+<div className="table-responsive">
+<table className="table table-borderless table-shopping-cart">
+<thead className="text-muted">
+    <tr className="small text-uppercase">
         <th scope="col">Productos</th>
         <th scope="col" width="120">Cantidad</th>
         <th scope="col" width="120">Precio</th>
@@ -21,95 +37,45 @@ export const Cart = (product) => {
     </tr>
 </thead>
 <tbody>
-    <tr>
-        <td>
-            <figure className="itemside align-items-center">
-                <div class="aside"><img src="https://i.imgur.com/1eq5kmC.png" class="img-sm"/></div>
-                <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Tshirt with round nect</a>
-                    <p class="text-muted small">SIZE: L <br/> Brand: MAXTRA</p>
-                </figcaption>
-            </figure>
-        </td>
-        <td> <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select> </td>
-        <td>
-            <div class="price-wrap"> <var class="price">$10.00</var> <small class="text-muted"> $9.20 each </small> </div>
-        </td>
-        <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light" data-abc="true"> Remove</a> </td>
-    </tr>
-    <tr>
-        <td>
-            <figure class="itemside align-items-center">
-                <div class="aside"><img src="https://i.imgur.com/hqiAldf.jpg" class="img-sm"/></div>
-                <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Flower Formal T-shirt</a>
-                    <p class="text-muted small">SIZE: L <br/> Brand: ADDA </p>
-                </figcaption>
-            </figure>
-        </td>
-        <td> <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-            </select> </td>
-        <td>
-            <div class="price-wrap"> <var class="price">$15</var> <small class="text-muted"> $12 each </small> </div>
-        </td>
-        <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
-    </tr>
-    <tr>
-        <td>
-            <figure class="itemside align-items-center">
-                <div class="aside"><img src="https://i.imgur.com/UwvU0cT.jpg" class="img-sm"/></div>
-                <figcaption class="info"> <a href="#" class="title text-dark" data-abc="true">Printed White Tshirt</a>
-                    <p class="small text-muted">SIZE:M <br/> Brand: Cantabil</p>
-                </figcaption>
-            </figure>
-        </td>
-        <td> <select class="form-control">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-            </select> </td>
-        <td>
-            <div class="price-wrap"> <var class="price">$9</var> <small class="text-muted"> $6 each</small> </div>
-        </td>
-        <td class="text-right d-none d-md-block"> <a data-original-title="Save to Wishlist" title="" href="" class="btn btn-light" data-toggle="tooltip" data-abc="true"> <i class="fa fa-heart"></i></a> <a href="" class="btn btn-light btn-round" data-abc="true"> Remove</a> </td>
-    </tr>
+
+
+
+    {cart.map(product => <ItemCart key={product.id} product={product}/>)}
+
+
+
+
 </tbody>
 </table>
 </div>
 </div>
 </aside>
-<aside class="col-lg-3">
-<div class="card mb-3">
-<div class="card-body">
+<aside className="col-lg-3">
+<div className="card mb-3">
+<div className="card-body">
 <form>
-<div class="form-group"> <label>Have coupon?</label>
-    <div class="input-group"> <input type="text" class="form-control coupon" name="" placeholder="Coupon code"/> <span class="input-group-append"> <button class="btn btn-primary btn-apply coupon">Apply</button> </span> </div>
+<div className="form-group"> <label>Tienes un CUPON?</label>
+    <div className="input-group"> <input type="text" className="form-control coupon" name="" placeholder="Codigo"/> <span className="input-group-append px-3"> <button disabled className="btn btn-primary btn-apply coupon">Aplicar</button> </span> </div>
 </div>
 </form>
 </div>
 </div>
-<div class="card">
-<div class="card-body">
-<dl class="dlist-align">
-<dt>Total price:</dt>
-<dd class="text-right ml-3">$69.97</dd>
+<div className="card">
+<div className="card-body">
+<dl className="dlist-align">
+<dt>Sub Total: </dt>
+<dd className="text-right ml-3 px-2"> ${totalPrice()}</dd>
 </dl>
-<dl class="dlist-align">
-<dt>Discount:</dt>
-<dd class="text-right text-danger ml-3">- $10.00</dd>
+<dl className="dlist-align">
+<dt>Descuento:</dt>
+<dd className="text-right text-danger ml-3 px-2">- ${totalPrice()*.25}</dd>
 </dl>
-<dl class="dlist-align">
+<dl className="dlist-align">
 <dt>Total:</dt>
-<dd class="text-right text-dark b ml-3"><strong>$59.97</strong></dd>
+<dd className="text-right text-dark b ml-3 px-2"><strong>${totalPrice()*.75}</strong></dd>
 </dl>
-<hr/> <a href="#" class="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Make Purchase </a> <a href="#" class="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continue Shopping</a>
+<hr/> <a href="#" className="btn btn-out btn-primary btn-square btn-main" data-abc="true"> Terminar compra </a> 
+<Link to="/" className="btn btn-out btn-success btn-square btn-main mt-2" data-abc="true">Continuar comprando</Link>
 </div>
 </div>
 </aside>
@@ -127,5 +93,6 @@ export const Cart = (product) => {
 
     </>
   )
+}
 }
 export default Cart;

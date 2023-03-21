@@ -1,38 +1,38 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-
+const images = require.context('../../assets/images', true)
 const Item = (prods) => {
   return (
     <>
-        <div class="col-md-12 col-lg-4 mb-4 mb-lg-0">
-          <div class="card">
-            <div class="d-flex justify-content-between p-3">
-              <p class="lead mb-0">{prods.producto.categoria+"     "+prods.producto.nombre}</p>
-              <div class="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong cant">
-                {/* <p class="text-white mb-0 small">x4</p> */}
+        <div className="col-md-12 col-lg-4 mb-4 mb-lg-0">
+          <div className="card">
+            <div className="d-flex justify-content-between p-3">
+              <p className="lead mb-0">{prods.producto.categoria+"     "+prods.producto.nombre}</p>
+              <div className="bg-info rounded-circle d-flex align-items-center justify-content-center shadow-1-strong cant">
+                {/* <p className="text-white mb-0 small">x4</p> */}
               </div>
             </div>
-            <img src={prods.producto.image} class="card-img-top" alt=""/>
-            <div class="card-body">
-              <div class="d-flex justify-content-between">
-                <p class="small"><a href="#!" class="text-muted">{prods.producto.categoria}</a></p>
-                <p class="small text-danger"><s>$ {(prods.producto.precio)+500}</s></p>
+            <img src={images(`./${prods.producto.image}`)} className="card-img-top" alt={prods.producto.image}/>
+            <div className="card-body">
+              <div className="d-flex justify-content-between">
+                <p className="small"><a href="#!" className="text-muted">{prods.producto.categoria}</a></p>
+                <p className="small text-danger"><s>$ {(prods.producto.precio)*1.25}</s></p>
               </div>
 
-              <div class="d-flex justify-content-between mb-3">
-                <h5 class="mb-0">{prods.producto.nombre}</h5>
-                <h5 class="text-dark mb-0">{prods.producto.precio}</h5>
+              <div className="d-flex justify-content-between mb-3">
+                <h5 className="mb-0">{prods.producto.nombre}</h5>
+                <h5 className="text-dark mb-0">{prods.producto.precio}</h5>
               </div>
 
-              <div class="d-flex justify-content-between mb-2">
-                <p class="text-muted mb-0">Disponible: <span class="fw-bold">{prods.producto.stock}</span></p>
-                <div class="ms-auto text-warning">
-                  <Link class="btn-primary" to={`/detalle/${prods.producto.id}`}>Detalles</Link>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
-                  <i class="fa fa-star"></i>
+              <div className="d-flex justify-content-between mb-2">
+                <p className="text-muted mb-0">Disponible: <span className="fw-bold">{prods.producto.stock}</span></p>
+                <div className="ms-auto text-warning">
+                  <Link className="btn-primary" to={`/detalle/${prods.producto.id}`}>Detalles</Link>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
                 </div>
               </div>
             </div>
