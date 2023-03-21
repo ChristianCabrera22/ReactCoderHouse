@@ -18,7 +18,8 @@ export const ItemDetail= ({data}) => {
   }
   console.log("data:")
   console.log(data)
-  
+  console.log("images:")
+  console.log(images)
   return (
     <div>
         {/* detalle: {data.nombre} */}
@@ -36,11 +37,11 @@ export const ItemDetail= ({data}) => {
           </div>
           <div className="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light">
-            <img src={images(`./${data.image}`)}
+            {/* <img src={`./${data.image}`}
                className="br15 br20 img-fluid"
-               />
+               /> */}
                
-               <a href={images(`./${data.image}`)}>asds</a>
+               {/* <a href={images(`./${data.image}`)}>asds</a> */}
                
             <a href="#!">
               <div className="mask"></div>

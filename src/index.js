@@ -9,7 +9,7 @@ import Cart from './components/Cart';
 import Contacto from './components/Contacto';
 import CartProvider from './context/CartContext';
 // import './components/styles/style.css'
-
+import './firebase/config';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
