@@ -16,16 +16,7 @@ export const ItemDetail= ({data}) => {
     addProduct(data,cant)
   }
 
-  const images = require.context('../../assets/images', false,/\.(jpg)$/)
-  let imageLink="./"
-  if (data.image === undefined) {
-    const imageLinkAux = "./"
-  } else {
-    const imageLinkAux=images(`./${data.image}`)
-    imageLink=imageLinkAux
-    
-  }
-  console.log(imageLink)
+  
   return (
     <div>
         <section>
@@ -41,12 +32,7 @@ export const ItemDetail= ({data}) => {
           </div>
           <div className="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light">
-              {/* <img scr={imagesDetail===undefined ? "": require('../../assets/images/'+data.image)}/> */}
-            {/* <img src={require('../../assets/images/'+data.image)} alt="Imagen" className="br15 br20 img-fluid" /> */}
-            <img className="br15 br20 img-fluid" src={imageLink} alt="" />
-            {/*  */}
-               {/* <a href={images(`./${data.image}`)}>asds</a> */}
-               
+            <img className="br15 br20 img-fluid" src={data.image} alt="" />
             <a href="#!">
               <div className="mask"></div>
             </a>

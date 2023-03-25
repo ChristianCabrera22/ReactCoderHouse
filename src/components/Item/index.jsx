@@ -3,8 +3,7 @@ import {Link} from 'react-router-dom'
 
 
 const Item = (prods) => {
-  const images = require.context('../../assets/images', true)
-  return (
+    return (
     <>
         <div className="col-md-12 col-lg-4 mb-4 mb-lg-0 mt-4">
           <div className="card">
@@ -14,7 +13,7 @@ const Item = (prods) => {
                 {/* <p className="text-white mb-0 small">x4</p> */}
               </div>
             </div>
-            <img src={images(`./${prods.producto.image}`)} className="card-img-top" alt={prods.producto.image}/>
+            <img src={prods.producto.image} className="card-img-top" alt={prods.producto.image}/>
             
             <div className="card-body">
               <div className="d-flex justify-content-between">

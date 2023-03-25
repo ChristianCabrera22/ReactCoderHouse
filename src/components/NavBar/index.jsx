@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import CartWidget from '../CartWidget/CartWidget'
 import {NavLink} from 'react-router-dom'
-// import './Nav.js'
 import logo from './diviLogo.png'
 import './NavBar.css'
 
@@ -26,16 +25,21 @@ const MenuNav = () => {
 
   return (
     <>
-    <nav className={`navbar navbar-expand-lg navbar-dark p-1 fixed-top ${isScrolled ? 'bg-dark' : ''}`}>
+    <nav className={`navbar navbar-expand-lg navbar-dark move fixed-top ${isScrolled ? 'bg-dark' : ''}`}>
       <div className="container-fluid">
         <a className="navbar-brand" href="#">
           <img src={logo} alt="Divi Logo" className={`logo ${isScrolled ? 'consize' : ''}`} />
         </a>
+         <ul className={`navbar-nav navbar-toggler ${isScrolled ? '' : 'd-none'}`}>
+            <li className="nav-item ">
+                <div className="nav-link"><NavLink className="nav-link" to='/cart'><CartWidget/></NavLink></div>
+              </li>
+          </ul>
         <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        <div className=" collapse navbar-collapse" id="navbarNavDropdown">
+        <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav ms-auto ">
             <li className="nav-item">
               <NavLink className="nav-link mx-2 active fs-4" to='/'>Inicio</NavLink>
@@ -53,7 +57,7 @@ const MenuNav = () => {
               </ul>
             </li>
             <li className="nav-item">
-                <div className="nav-link"><NavLink className="nav-link" to='/cart'><CartWidget/></NavLink></div>
+                <div className="nav-link"><NavLink className="nav-link d-none d-sm-block" to='/cart'><CartWidget/></NavLink></div>
               </li>
           </ul>
         </div>
@@ -62,7 +66,7 @@ const MenuNav = () => {
     
     <div className={`bgNav ${isScrolled ? '' : ''}`}>
         <h1 className="display-3 text-center text-white greatVibesFont h1Nav">
-          Bienvenido!! Sabemos de remeras
+          <br />
         </h1>
       </div>
     </>

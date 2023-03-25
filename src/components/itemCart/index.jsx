@@ -1,7 +1,7 @@
 import React from 'react'
 import { useCartContext } from '../../context/CartContext'
 import { Link } from 'react-router-dom'
-const images = require.context('../../assets/images', true)
+
 const ItemCart = ({product}) => {
     const {removeProduct} = useCartContext()
   return (
@@ -9,7 +9,7 @@ const ItemCart = ({product}) => {
         <tr>
         <td>
             <figure className="itemside align-items-center">
-                <div className="aside"><img src={images(`./${product.image}`)} className="img-sm"/></div>
+                <div className="aside"><img src={product.image} className="img-sm"/></div>
                 <figcaption className="info"> <a href="#" className="title text-dark" data-abc="true">{product.categoria+"   "+product.nombre}</a>
                     <p className="text-muted small">TAMAÑO: {product.size} <br/> <Link to={`/detalle/${product.id}`}>Ver detalle</Link></p>
                 </figcaption>

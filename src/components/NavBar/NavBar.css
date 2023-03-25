@@ -11,14 +11,15 @@
 .greatVibesFont {
   font-family : GreatVibes;
 }
-
+.move{
+    transform : translateY(-29px) scale(1);
+}
 .navbar-brand img {
-  width:100%;
+  width:30%;
   max-width:640px;
   position:absolute;
   transition:all 300ms linear;
-  transform-origin: 0% 0%;
-  
+  transform-origin: 0% 0%;  
 }
 
 @media screen and (max-width:956px){
@@ -26,23 +27,24 @@
     width:100%;
     max-width:240px;
     position:relative;
+    transform : translateY(-40px) scale(1);
   }
 }
 
 img.consize {
-  transform : translateY(-20px) scale(0.25);
+  transform : translateY(-61px) scale(1);
 }
 .mainNav {
   transition : background 300ms linear;
 }
 
 .bgNav{
-    background:url('./adventure.jpg') no-repeat;
+    background:url('./cabecera2.jpg') no-repeat;
     background-size:cover;
-    background-position:top center
+    background-position:top center;
 }
 .h1Nav {
-    padding-top:50vh;
+    padding-top:30vh;
     padding-bottom:10vh;
-    text-shadow : 0px 3px 4px rgba(0,0,0,0.8)
+    text-shadow : 0px 3px 4px rgba(0,0,0,0.8);
 }
