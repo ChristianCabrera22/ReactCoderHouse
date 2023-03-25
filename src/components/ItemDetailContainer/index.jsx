@@ -24,22 +24,18 @@ const ItemDetailContainer = () => {
             }, 500)
         })
         getData.then(res=> setData(res.find(prods=>prods.id===parseInt(detalleId)))) */
-
         const querydb = getFirestore()
         const queryDoc = doc(querydb, 'products', detalleId)
         getDoc(queryDoc)
           .then(res => setData({id: res.id, ...res.data()}))
     }, [detalleId])
 
-  return (
-    <>
-    {console.log("Data detailContanier")}
-    {console.log(data)}
-    {console.log("detalle ID:")}
-    {console.log(detalleId)}
-    <ItemDetail data={data}/>
-    </>
-  )
+      return (
+        
+                <>
+                <ItemDetail data={data}/>
+                </>
+      )
 }
 
 export default ItemDetailContainer

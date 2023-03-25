@@ -40,7 +40,7 @@ const ItemListContainer = (props) => {
 
   return (
     <>
-    <Title greeting="Bienvenido!"/>
+    {/* <Title greeting="Bienvenido!"/> */}
     <ItemList data={data}/>
     </>
   )

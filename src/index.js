@@ -4,6 +4,7 @@ import reportWebVitals from './reportWebVitals';
 import MenuNav from './components/NavBar';
 import ItemListContainer from './components/ItemListContainer';
 import ItemDetailContainer from './components/ItemDetailContainer';
+import Footer from './components/Footer';
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart';
 import Contacto from './components/Contacto';
@@ -25,6 +26,7 @@ root.render(
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/contacto' element={<Contacto/>}/>
           </Routes>
+          <Footer/>
       </CartProvider>
     </BrowserRouter>
   </React.StrictMode>

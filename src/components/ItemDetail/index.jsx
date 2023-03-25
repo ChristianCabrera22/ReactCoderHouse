@@ -4,28 +4,32 @@ import './ItemDetail.css'
 import ItemCount from '../ItemCount'
 import { Link } from 'react-router-dom'
 
-const images = require.context('../../assets/images', true)
+
 
 export const ItemDetail= ({data}) => {
-
+  
   
   const [goToCart, setGoToCart] = useState(false)
   const {addProduct} = useCartContext()
-
   const onAdd=(cant)=>{
     setGoToCart(true)
     addProduct(data,cant)
   }
-  console.log("data:")
-  console.log(data)
-  console.log("images:")
-  console.log(images)
+
+  const images = require.context('../../assets/images', false,/\.(jpg)$/)
+  let imageLink="./"
+  if (data.image === undefined) {
+    const imageLinkAux = "./"
+  } else {
+    const imageLinkAux=images(`./${data.image}`)
+    imageLink=imageLinkAux
+    
+  }
+  console.log(imageLink)
   return (
     <div>
-        {/* detalle: {data.nombre} */}
-
         <section>
-  <div className="container py-5">
+  <div className="container mt-5">
     <div className="row justify-content-center">
       <div className="col-md-8 col-lg-6 col-xl-4">
         <div className="card br15">
@@ -37,10 +41,10 @@ export const ItemDetail= ({data}) => {
           </div>
           <div className="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light">
-            {/* <img src={`./${data.image}`}
-               className="br15 br20 img-fluid"
-               /> */}
-               
+              {/* <img scr={imagesDetail===undefined ? "": require('../../assets/images/'+data.image)}/> */}
+            {/* <img src={require('../../assets/images/'+data.image)} alt="Imagen" className="br15 br20 img-fluid" /> */}
+            <img className="br15 br20 img-fluid" src={imageLink} alt="" />
+            {/*  */}
                {/* <a href={images(`./${data.image}`)}>asds</a> */}
                
             <a href="#!">

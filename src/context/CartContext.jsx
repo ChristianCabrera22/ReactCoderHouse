@@ -5,13 +5,17 @@ export const useCartContext = () => useContext(CartContext)
 export const CartProvider = ({children}) => {
 
   const [cart, setCart] = useState([])
+  const imagesList = require.context('../assets/images', true)
 //funciones 
+
+  
+
   
   const clearCart=() => setCart([]) //limpia el carro, lo deja sin productos
   const isInCart = (id) => cart.find(producto => producto.id === id) ? true : false //esta en el carro?
 
   const removeProduct = (id) => setCart(cart.filter(product => product.id !== id))
-
+  
   const addProduct = (data,cant) => {
     if (isInCart(data.id)) {
       setCart(cart.map(product => {
@@ -36,7 +40,8 @@ export const CartProvider = ({children}) => {
       addProduct,
       totalPrice,
       totalProducts,
-      cart
+      cart,
+      imagesList
     }}>
         {children}
     </CartContext.Provider>
