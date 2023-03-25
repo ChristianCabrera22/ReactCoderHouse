@@ -8,3 +8,19 @@ section {
     border-top-left-radius: 15px; 
     border-top-right-radius: 15px
 }
+
+.card .sin-stockDetaill {
+    position: absolute;
+    top: 37px;
+    right: 10px;
+    width: 111px; /* ajustar el ancho de acuerdo al tamaño de la imagen */
+    height: 79px; /* ajustar la altura de acuerdo al tamaño de la imagen */
+    z-index: 1;
+}
+.card-img-top {
+    z-index: 0;
+}
+
+.card {
+    position: relative;
+  }

@@ -1,8 +1,23 @@
-section {
-    background-color: #eee; 
-    border-radius: .5rem .5rem 0 0;
+.card .sin-stock {
+    position: absolute;
+    top: 12px;
+    right: 10px;
+    width: 111px;
+    height: 79px;
+    z-index: 1;
 }
-.cant {
-    width: 35px;
-    height: 35px;
+.card-img-top {
+    z-index: 0;
+}
+
+.card {
+    position: relative;
+  }
+.oferta {
+    position: absolute;
+    top: 60px;
+    right: 10px;
+    z-index: 1;
+    transform: rotate(20deg);
+    font-size: 1.5rem;
 }

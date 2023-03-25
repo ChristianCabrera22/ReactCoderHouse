@@ -1,12 +1,8 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './style.css'
-export const contacto = () => {
-  return (
-    
-
-
-
-    
+const contacto = () => {
+	window.scrollTo(0, 230);
+  return (   
     <section className="ftco-section">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 		<div className="container">

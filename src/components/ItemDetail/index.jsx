@@ -1,10 +1,10 @@
-import React, {useState} from 'react'
+import React, {useState,useEffect} from 'react'
 import {useCartContext} from '../../context/CartContext';
 import './ItemDetail.css'
 import ItemCount from '../ItemCount'
 import { Link } from 'react-router-dom'
-
-
+import sinStock from '../Item/sinStock.png'
+import Swal from 'sweetalert2';
 
 export const ItemDetail= ({data}) => {
   
@@ -14,9 +14,22 @@ export const ItemDetail= ({data}) => {
   const onAdd=(cant)=>{
     setGoToCart(true)
     addProduct(data,cant)
+        let timerInterval
+        Swal.fire({
+          position: 'bottom-end',
+          icon: 'success',
+          showConfirmButton: false,
+          timer: 1300,
+          timerProgressBar: true,
+          willClose: () => {
+            clearInterval(timerInterval)
+          }
+        })
   }
+    useEffect(() => {
+      window.scrollTo(0, 230);
+    }, []);
 
-  
   return (
     <div>
         <section>
@@ -32,6 +45,9 @@ export const ItemDetail= ({data}) => {
           </div>
           <div className="bg-image hover-overlay ripple ripple-surface ripple-surface-light"
             data-mdb-ripple-color="light">
+              {data.stock === 0 && (
+            <img src={sinStock} className="sin-stockDetaill" alt="Sin stock"/>
+        )}
             <img className="br15 br20 img-fluid" src={data.image} alt="" />
             <a href="#!">
               <div className="mask"></div>
