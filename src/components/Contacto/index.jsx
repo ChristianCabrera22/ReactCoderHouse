@@ -1,7 +1,12 @@
-import React, {useEffect} from 'react'
+import React, {useEffect}from 'react'
 import './style.css'
+
+
+
 const contacto = () => {
-	window.scrollTo(0, 230);
+
+		window.scrollTo(0, 230);
+
   return (   
     <section className="ftco-section">
       <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>

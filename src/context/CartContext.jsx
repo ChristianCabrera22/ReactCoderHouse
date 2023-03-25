@@ -6,9 +6,11 @@ export const CartProvider = ({children}) => {
 
   const [cart, setCart] = useState([])
   const imagesList = require.context('../assets/images', true)
+  const [loginOK, setLoginOK] = useState(false)
 //funciones 
 
-  
+const setLoginON=() => setLoginOK(true)
+const setLoginOFF=() => setLoginOK(false)
 
   
   const clearCart=() => setCart([]) //limpia el carro, lo deja sin productos
@@ -41,7 +43,10 @@ export const CartProvider = ({children}) => {
       totalPrice,
       totalProducts,
       cart,
-      imagesList
+      imagesList,
+      setLoginON,
+      setLoginOFF,
+      loginOK
     }}>
         {children}
     </CartContext.Provider>

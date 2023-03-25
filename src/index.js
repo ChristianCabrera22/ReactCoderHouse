@@ -9,6 +9,7 @@ import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Cart from './components/Cart';
 import Contacto from './components/Contacto';
 import CartProvider from './context/CartContext';
+import Perfil from './components/Perfil'
 // import './components/styles/style.css'
 import './firebase/config';
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,6 +26,7 @@ root.render(
             <Route path='/detalle/:detalleId' element={<ItemDetailContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/contacto' element={<Contacto/>}/>
+            <Route path='/perfil' element={<Perfil/>}/>
           </Routes>
           <Footer/>
       </CartProvider>

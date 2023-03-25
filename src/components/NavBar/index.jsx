@@ -4,6 +4,8 @@ import {NavLink} from 'react-router-dom'
 import logo from './diviLogo.png'
 import './NavBar.css'
 
+import PerfilWidget from '../PerfilWidget';
+
 const MenuNav = () => {
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -55,6 +57,9 @@ const MenuNav = () => {
                 <li><a href="#inicio"><NavLink className="dropdown-item" to='/categoria/remera'>Remeras</NavLink></a></li>
                 <li><NavLink className="dropdown-item" to='/categoria/chomba'>Chombas</NavLink></li>
               </ul>
+            </li>
+            <li className="nav-item">
+              <NavLink className="nav-link mx-2 active fs-4" to='/Perfil'><PerfilWidget/></NavLink>
             </li>
             <li className="nav-item">
                 <div className="nav-link"><NavLink className="nav-link d-none d-sm-block" to='/cart'><CartWidget/></NavLink></div>

@@ -11,12 +11,13 @@ export const Cart = (product) => {
         window.scrollTo(0, 230);
       }, []);
 
-    const {cart, totalPrice,clearCart} =useCartContext()
+    const {cart, totalPrice,clearCart,loginOK} =useCartContext()
     const order= {
             id: 'Christian',
             status: false,
             item: cart.map(product => ({id: product.id, cant: product.cant}))
     }
+    console.log("login que viene:"+loginOK)
     const orderClick = () => {
 
 
