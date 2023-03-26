@@ -1,26 +1,37 @@
 import React,{useEffect} from 'react'
 import { useCartContext } from '../../context/CartContext'
 import './style.css'
-import { Link } from 'react-router-dom'
+import { Link,useNavigate } from 'react-router-dom'
 import ItemCart from '../itemCart'
 import {addDoc,collection, getFirestore} from 'firebase/firestore'
 import Swal from 'sweetalert2'
+
 export const Cart = (product) => {
- 
+  const {cart, totalPrice,clearCart,loginOK,login} =useCartContext()
     useEffect(() => {
         window.scrollTo(0, 230);
+        const storedLoginData = localStorage.getItem('cart');
+        if (storedLoginData) {
+          const parsedLoginData = JSON.parse(storedLoginData);
+        }
       }, []);
-
-    const {cart, totalPrice,clearCart,loginOK} =useCartContext()
+      const navigate = useNavigate();
+      function handleInicioSesionClick() {
+        navigate('/perfil');
+      }
+      
     const order= {
-            id: 'Christian',
+            id: login,
             status: false,
-            item: cart.map(product => ({id: product.id, cant: product.cant}))
+            item: cart.map(product => ({id: product.id, cant: product.cant})),
+            total: totalPrice(),
+            fecha: new Date().toLocaleString()
     }
-    console.log("login que viene:"+loginOK)
+    loginOK? console.log("login: "+loginOK+" ID:"+login):console.log("sin login")
     const orderClick = () => {
 
-
+      if (login) {
+        //compra con LOGIN
         const swalWithBootstrapButtons = Swal.mixin({
             customClass: {
               confirmButton: 'btn btn-success px-4',
@@ -45,13 +56,13 @@ export const Cart = (product) => {
                 addDoc(ordersCollection,order)
                     .then(({idAuto})=> (console.log("Compra realizada: "+idAuto)))
                 clearCart()
+                localStorage.removeItem('cart');
               swalWithBootstrapButtons.fire(
                 'Compra realizada',
                 'puede revisarla desde su perfil',
                 'success'
               )
             } else if (
-              /* Read more about handling dismissals below */
               result.dismiss === Swal.DismissReason.cancel
             ) {
               swalWithBootstrapButtons.fire(
@@ -61,6 +72,29 @@ export const Cart = (product) => {
               )
             }
           })
+          //<<--- compra con login
+      } else {
+        Swal.fire({
+          title: 'Usuario no registrado</u></strong>',
+          icon: 'info',
+          html:
+            'Para continuar con la compra <b>debe</b>, ' +
+            'tener un usuario registrado',
+          showCloseButton: true,
+          showCancelButton: true,
+          focusConfirm: false,
+          confirmButtonText:
+            '<i class="fa fa-thumbs-up"></i> Iniciar Sesion',
+          confirmButtonAriaLabel: 'Thumbs up, great!',
+          cancelButtonText:
+            '<i class="fa fa-thumbs-down"></i>Cancelar',
+          cancelButtonAriaLabel: 'Thumbs down'
+        }).then((result) => {
+          if (result.isConfirmed) {
+            handleInicioSesionClick();
+          }
+        });
+      }
 
 
     }

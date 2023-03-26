@@ -8,9 +8,7 @@ import PerfilOrders from '../PerfilOrders'
 const Perfil = () => {
 
     const [loginData, setLoginData] = useState({ email: '', pass: '' });
-    let {loginOK,setLoginON,setLoginOFF} = useCartContext()
-    console.log("recien cargado: ")
-    console.log(loginOK)
+    let {loginOK,setLoginON,setLoginOFF,login,setLogin} = useCartContext()
     const [idlogin, setID] = useState()
     const handleInputChange = (event) => {
       const { name, value } = event.target;
@@ -19,31 +17,40 @@ const Perfil = () => {
   
     const handleSubmit = (event) => {
       event.preventDefault();
-      const querydb = getFirestore()
-      const queryCollection = collection(querydb, 'users')
-      const queryFilter= query(queryCollection, where('email','==',loginData.email), where ('pw','==',loginData.pass))
-      getDocs(queryFilter)
-    //     .then(res => (console.log("usuario encontrado") ))
-        .then((querySnapshot) => {
-        querySnapshot.forEach((doc) => {
-          console.log(doc.id, " Login Correcto ", doc.data());
-          setLoginON()
-          setID(doc.id)
-          console.log(loginOK)
-          localStorage.setItem('loginData', JSON.stringify(doc.id));
-          Swal.fire({
-            icon: 'success',
-            title: 'Perfecto...!',
-            text: 'Iniciaste sesion!',
-          })
-        });
-
-      });
+const querydb = getFirestore();
+const queryCollection = collection(querydb, 'users');
+const queryFilter= query(queryCollection, where('email','==',loginData.email), where ('pw','==',loginData.pass));
+getDocs(queryFilter)
+  .then((querySnapshot) => {
+    if (querySnapshot.size === 0) {
+      console.log("Usuario NO encontrado")
+      Swal.fire({
+        icon: 'error',
+        title: 'Error...!',
+        text: 'Verifique datos colocados',
+      })
+    } else {
+      querySnapshot.forEach((doc) => {
+        console.log(doc.id, " Login Correcto ", doc.data())
+        setLoginON()
+        setID(doc.id)
+        setLogin(doc.id)
+        login=doc.id
+        console.log("Inicio sesion:"+loginOK)
+        localStorage.setItem('loginData', JSON.stringify(doc.id))
+        Swal.fire({
+          icon: 'success',
+          title: 'Perfecto...!',
+          text: 'Iniciaste sesion!',
+        })
+      })
+    }
+  })
 
       
-      //Aquí puedes hacer algo con los datos ingresados por el usuario
-      console.log(loginData);
-    };
+      //datos
+
+    }
 
     useEffect(() => {
         window.scrollTo(0, 230);
@@ -53,6 +60,9 @@ const Perfil = () => {
     setLoginData(parsedLoginData);
     loginOK=true
     setLoginON()
+    setLogin(parsedLoginData)
+    login=parsedLoginData
+
   }
       }, []);
 
@@ -61,7 +71,10 @@ const Perfil = () => {
     const logOff = () => {
         setLoginOFF()
         loginOK=false
+        setLogin("")
+        login=""
         localStorage.removeItem('loginData');
+        console.log("sesion cerrada")
     }
     return (
         <>

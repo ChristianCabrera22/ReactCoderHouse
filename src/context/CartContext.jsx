@@ -5,13 +5,15 @@ export const useCartContext = () => useContext(CartContext)
 export const CartProvider = ({children}) => {
 
   const [cart, setCart] = useState([])
+  
   const imagesList = require.context('../assets/images', true)
   const [loginOK, setLoginOK] = useState(false)
+  const [login, setLoginName] = useState()
 //funciones 
 
 const setLoginON=() => setLoginOK(true)
 const setLoginOFF=() => setLoginOK(false)
-
+const setLogin=(name) => setLoginName(name)
   
   const clearCart=() => setCart([]) //limpia el carro, lo deja sin productos
   const isInCart = (id) => cart.find(producto => producto.id === id) ? true : false //esta en el carro?
@@ -21,10 +23,15 @@ const setLoginOFF=() => setLoginOK(false)
   const addProduct = (data,cant) => {
     if (isInCart(data.id)) {
       setCart(cart.map(product => {
-        return product.id === data.id ? {...product, cant: product.cant + cant} : product
-      }))
+        const cartRet = product.id === data.id ? {...product, cant: product.cant + cant} : product
+        localStorage.setItem('cart', JSON.stringify(cartRet));
+        return cartRet
+      }
+      ))
     } else {
-      setCart([...cart, {...data, cant}])
+      const cartRet= [...cart, {...data, cant}]
+      localStorage.setItem('cart', JSON.stringify(cartRet));
+      setCart(cartRet)
     }
   }
   const totalPrice = () => { 
@@ -32,7 +39,7 @@ const setLoginOFF=() => setLoginOK(false)
   }
 
   const totalProducts = () => cart.reduce((acumulador, productoActual) => acumulador + productoActual.cant,0)
-  console.log('Articulos en el carrito: ',cart)
+
 
   return (
     <CartContext.Provider value={{
@@ -46,7 +53,9 @@ const setLoginOFF=() => setLoginOK(false)
       imagesList,
       setLoginON,
       setLoginOFF,
-      loginOK
+      loginOK,
+      login,
+      setLogin
     }}>
         {children}
     </CartContext.Provider>
