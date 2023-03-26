@@ -4,6 +4,7 @@ import {getFirestore,collection,getDocs,query,where} from 'firebase/firestore'
 import Swal from 'sweetalert2';
 import './css/style.css'
 import PerfilOrders from '../PerfilOrders'
+import {Link} from 'react-router-dom'
 
 const Perfil = () => {
 
@@ -148,8 +149,8 @@ getDocs(queryFilter)
                       </div>
         
                       <div className="text-center p-t-136">
-                        <a className="txt2 " href="#">
-                          Crear cuenta nueva
+                        <a  href="#">
+                          <Link to="/registro" className="txt2">Crear cuenta nueva</Link>
                           <i className="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                       </div>

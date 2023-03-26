@@ -12,6 +12,7 @@ import CartProvider from './context/CartContext';
 import Perfil from './components/Perfil'
 // import './components/styles/style.css'
 import './firebase/config';
+import PerfilNew from './components/PerfilNew';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -27,6 +28,7 @@ root.render(
             <Route path='/cart' element={<Cart/>}/>
             <Route path='/contacto' element={<Contacto/>}/>
             <Route path='/perfil' element={<Perfil/>}/>
+            <Route path='/registro' element={<PerfilNew/>}/>
           </Routes>
           <Footer/>
       </CartProvider>
