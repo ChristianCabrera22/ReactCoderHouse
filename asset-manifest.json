@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "./static/css/main.77ff5b7b.css",
-    "main.js": "./static/js/main.e9fda23e.js",
+    "main.css": "./static/css/main.42a64a89.css",
+    "main.js": "./static/js/main.aa91b05e.js",
     "static/js/787.3c262021.chunk.js": "./static/js/787.3c262021.chunk.js",
     "static/media/Montserrat-Bold.ttf": "./static/media/Montserrat-Bold.0915f0a8c3367a6d05ec.ttf",
     "static/media/cabecera2.jpg": "./static/media/cabecera2.1d041ca9bbee69042c8d.jpg",
@@ -12,12 +12,12 @@
     "static/media/Poppins-Bold.ttf": "./static/media/Poppins-Bold.e2abc8f5e9a67ea669ea.ttf",
     "static/media/diviLogo.png": "./static/media/diviLogo.e7706cc50099877188d4.png",
     "index.html": "./index.html",
-    "main.77ff5b7b.css.map": "./static/css/main.77ff5b7b.css.map",
-    "main.e9fda23e.js.map": "./static/js/main.e9fda23e.js.map",
+    "main.42a64a89.css.map": "./static/css/main.42a64a89.css.map",
+    "main.aa91b05e.js.map": "./static/js/main.aa91b05e.js.map",
     "787.3c262021.chunk.js.map": "./static/js/787.3c262021.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.77ff5b7b.css",
-    "static/js/main.e9fda23e.js"
+    "static/css/main.42a64a89.css",
+    "static/js/main.aa91b05e.js"
   ]
 }
