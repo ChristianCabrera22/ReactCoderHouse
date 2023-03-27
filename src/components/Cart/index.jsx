@@ -3,7 +3,7 @@ import { useCartContext } from '../../context/CartContext'
 import './style.css'
 import { Link,useNavigate } from 'react-router-dom'
 import ItemCart from '../itemCart'
-import {addDoc,collection, getFirestore} from 'firebase/firestore'
+import {addDoc,collection,getFirestore, updateDoc, doc} from 'firebase/firestore'
 import Swal from 'sweetalert2'
 
 export const Cart = (product) => {
@@ -51,10 +51,19 @@ export const Cart = (product) => {
             reverseButtons: true
           }).then((result) => {
             if (result.isConfirmed) {
+              // guardar en orders
                 const db = getFirestore();
                 const ordersCollection = collection(db, 'orders')
                 addDoc(ordersCollection,order)
                     .then(({idAuto})=> (console.log("Compra realizada: "+idAuto)))
+                    //quiar el stock lo comprado
+                    const productsCollection = collection(db, 'products')
+                    for (const item of cart) {
+                      const productDoc = doc(productsCollection, item.id)
+                      updateDoc(productDoc, {
+                        stock: item.stock - item.cant
+                      })}
+                      // --->
                 clearCart()
                 localStorage.removeItem('cart');
               swalWithBootstrapButtons.fire(

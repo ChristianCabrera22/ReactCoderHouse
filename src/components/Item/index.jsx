@@ -18,11 +18,12 @@ const Item = (prods) => {
                 {/* <p className="text-white mb-0 small">x4</p> */}
               </div>
             </div>
-            {prods.producto.stock === 0 && (
-            <img src="https://i.ibb.co/7bkdLxv/sinStock.png" className="sin-stock" alt="Sin stock"/>
-        )}
+            
         {prods.producto.oferta !== 0 && (
             <span class="badge rounded-pill text-bg-danger oferta">{prods.producto.oferta}%off</span>
+        )}
+        {prods.producto.stock === 0 && (
+            <img src="https://i.ibb.co/7bkdLxv/sinStock.png" className="sin-stock" alt="Sin stock"/>
         )}
             <img src={prods.producto.image} className="card-img-top" alt={prods.producto.image}/>
             
