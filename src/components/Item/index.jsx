@@ -1,7 +1,6 @@
 import React, {useEffect}from 'react'
 import {Link} from 'react-router-dom'
 import './Item.css'
-import sinStock from './sinStock.png'
 
 
 
@@ -20,7 +19,7 @@ const Item = (prods) => {
               </div>
             </div>
             {prods.producto.stock === 0 && (
-            <img src={sinStock} className="sin-stock" alt="Sin stock"/>
+            <img src="https://i.ibb.co/7bkdLxv/sinStock.png" className="sin-stock" alt="Sin stock"/>
         )}
         {prods.producto.oferta !== 0 && (
             <span class="badge rounded-pill text-bg-danger oferta">{prods.producto.oferta}%off</span>
