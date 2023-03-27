@@ -1,6 +1,6 @@
 import React, {useEffect,useState} from 'react'
 import { useCartContext } from '../../context/CartContext'
-import {getFirestore,collection,getDocs,query,where} from 'firebase/firestore'
+import {getFirestore,collection,getDocs,query,where, doc} from 'firebase/firestore'
 import Swal from 'sweetalert2';
 import './css/style.css'
 import PerfilOrders from '../PerfilOrders'
@@ -11,6 +11,7 @@ const Perfil = () => {
     const [loginData, setLoginData] = useState({ email: '', pass: '' });
     let {loginOK,setLoginON,setLoginOFF,login,setLogin} = useCartContext()
     const [idlogin, setID] = useState()
+    const [nameUser, setName] = useState()
     const handleInputChange = (event) => {
       const { name, value } = event.target;
       setLoginData({ ...loginData, [name]: value });
@@ -36,6 +37,7 @@ getDocs(queryFilter)
         setLoginON()
         setID(doc.id)
         setLogin(doc.id)
+        setName(doc.data().name)
         login=doc.id
         console.log("Inicio sesion:"+loginOK)
         localStorage.setItem('loginData', JSON.stringify(doc.id))
@@ -77,10 +79,14 @@ getDocs(queryFilter)
         localStorage.removeItem('loginData');
         console.log("sesion cerrada")
     }
+    console.log("doc.name")
+    console.log(nameUser)
     return (
         <>
-    <button className="btn btn-primary mt-5" onClick={logOff}>log off</button>
-    <PerfilOrders idUser={localStorage.getItem('loginData')}/>
+    <button className="btn btn-primary mt-5" onClick={logOff}>Cerrar Sesion</button>
+    <PerfilOrders 
+      idUser={localStorage.getItem('loginData')}
+      name={nameUser}/>
     </>
     )
 

@@ -2,7 +2,8 @@ import React, {useState, useEffect} from 'react'
 import ItemOrders from '../ItemOrders';
 import {getFirestore,collection,getDocs,query,where,orderBy} from 'firebase/firestore'
 
-const PerfilOrders = ({idUser}) => {
+
+const PerfilOrders = ({idUser, name}) => {
 const id=idUser.replace(/['"]+/g, '') //el id viene con comillas, "Christian" .. se retiran ""
 window.scrollTo(0, 230);
 const [data, setData]=useState([])
@@ -18,10 +19,11 @@ useEffect(()=> {
      console.log(queryFilter)
   }, [])
   console.log("Ordenes del usuario: "+id)
-  console.log(data)
+  console.log(name)
+  
   return (
     <>
-    <h1 class="mt-2">Hola {id}, aqui estan tus ordenes:</h1>
+    <h1 class="mt-2">Hola {name}, aqui estan tus ordenes:</h1>
     <section class='sec'>
   <div class="container py-5">
     
