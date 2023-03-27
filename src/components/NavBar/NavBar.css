@@ -35,7 +35,7 @@
 }
 
 img.consize {
-  transform : translateY(-70px) scale(1);
+  transform : translateY(-64px) scale(1);
 }
 .mainNav {
   transition : background 300ms linear;
