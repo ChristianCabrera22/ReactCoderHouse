@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link} from 'react-router-dom'
 import './style.css'
 const index = () => {
   return (
@@ -9,16 +10,16 @@ const index = () => {
 					<div class="col-md-12 text-center">
 						<h2 class="footer-heading logo">LaLocura</h2>
 						<p class="menu">
-							<a href="#">Inicio</a>
-							<a href="#">Quienes somos?</a>
-							<a href="#">Remeras</a>
-							<a href="#">Chombas</a>
-							<a href="#">Contacto</a>
+							<Link to="/">Inicio</Link>
+							<Link to="/">Quienes somos?</Link>
+							<Link to="/categoria/remera">Remeras</Link>
+							<Link to="/categoria/chomba">Chombas</Link>
+							<Link to="/contacto">Contacto</Link>
 						</p>
 						<ul class="ftco-footer-social p-0">
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Twitter"><span class="ion-logo-twitter"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Facebook"><span class="ion-logo-facebook"></span></a></li>
-              <li class="ftco-animate"><a href="#" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="ion-logo-instagram"></span></a></li>
+              <li class="ftco-animate"><a href="#" target="_blank" data-toggle="tooltip" data-placement="top" title="Map"><span class="fa fa-map-marker"></span></a></li>
+              <li class="ftco-animate"><a href="#" target="_blank" data-toggle="tooltip" data-placement="top" title="whatsapp"><span class="fa fa-phone"></span></a></li>
+              <li class="ftco-animate"><a href="#" target="_blank" data-toggle="tooltip" data-placement="top" title="Instagram"><span class="fa fa-globe"></span></a></li>
             </ul>
 					</div>
 				</div>

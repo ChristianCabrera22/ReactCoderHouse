@@ -36,7 +36,7 @@ export const ItemDetail= ({data}) => {
   <div className="container mt-5">
     <div className="row justify-content-center">
       <div className="col-md-8 col-lg-6 col-xl-4">
-        <div className="card br15">
+        <div className="card br15 rounded-3">
         <div className="d-flex justify-content-between p-3">
             <p className="lead mb-0"></p>
             <div className="  d-flex align-items-center justify-content-center shadow-1-strong">
@@ -48,7 +48,7 @@ export const ItemDetail= ({data}) => {
               {data.stock === 0 && (
             <img src={sinStock} className="sin-stockDetaill" alt="Sin stock"/>
         )}
-            <img className="br15 br20 img-fluid" src={data.image} alt="" />
+            <img className="br15 br20 img-fluid zoom" src={data.image} alt="" />
             <a href="#!">
               <div className="mask"></div>
             </a>
@@ -61,14 +61,15 @@ export const ItemDetail= ({data}) => {
               </div>
               <div>
                 <div className="d-flex flex-row justify-content-end mt-1 mb-4 text-danger">
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
-                  <i className="fas fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
+                  <i className="fa fa-star"></i>
                 </div>
                 <p className="small text-muted">Calificacion 4.0/5</p>
               </div>
             </div>
+            {data.descripcion}
           </div>
           <hr className="my-0" />
           <div className="card-body pb-0">

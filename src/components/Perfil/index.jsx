@@ -157,7 +157,6 @@ getDocs(queryFilter)
                       <div className="text-center p-t-136">
                         <a  href="#">
                           <Link to="/registro" className="txt2">Crear cuenta nueva</Link>
-                          <i className="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
                         </a>
                       </div>
                     </form>

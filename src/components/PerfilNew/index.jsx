@@ -84,8 +84,8 @@ const PerfilNew = () => {
 
   return (
     <>
-    <section className="vh-100 bg1 mt-5">
-  <div className="container h-100">
+    
+  <div className="container h-100 mt-5">
     <div className="row d-flex justify-content-center align-items-center h-100">
       <div className="col-lg-12 col-xl-11">
         <div className="card text-black br25">
@@ -98,7 +98,7 @@ const PerfilNew = () => {
                 <form className="mx-1 mx-md-4 validate-form" onSubmit={handleSubmit}>
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <i className="fa fa-user fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <input
                           className="form-control"
@@ -114,7 +114,7 @@ const PerfilNew = () => {
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <i className="fa fa-user fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <input
                           className="form-control"
@@ -130,7 +130,7 @@ const PerfilNew = () => {
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-user fa-lg me-3 fa-fw"></i>
+                    <i className="fa fa-user fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <input
                           className="form-control"
@@ -146,7 +146,7 @@ const PerfilNew = () => {
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-envelope fa-lg me-3 fa-fw"></i>
+                    <i className="fa fa-envelope fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
 
                       <input
@@ -163,7 +163,7 @@ const PerfilNew = () => {
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-lock fa-lg me-3 fa-fw"></i>
+                    <i className="fa fa-lock fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <input
                           className="form-control"
@@ -180,7 +180,7 @@ const PerfilNew = () => {
                   </div>
 
                   <div className="d-flex flex-row align-items-center mb-4">
-                    <i className="fas fa-key fa-lg me-3 fa-fw"></i>
+                    <i className="fa fa-key fa-lg me-3 fa-fw"></i>
                     <div className="form-outline flex-fill mb-0">
                     <input
                           className="form-control"
@@ -221,7 +221,7 @@ const PerfilNew = () => {
       </div>
     </div>
   </div>
-</section>
+
     </>
   )
 }

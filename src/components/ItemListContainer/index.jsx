@@ -57,8 +57,8 @@ const ItemListContainer = (props) => {
           <li><Link class="nav-link px-2 text-white" to="/categoria/remera">Remeras</Link></li>
           <li><Link class="nav-link px-2 text-white" to="/categoria/chomba">Chombas</Link></li>
           <li><p class="nav-link px-2  text-secondary">Ordenar de: </p></li>
-          <li><button class="nav-link px-2 text-white" onClick={()=>{select("mayor")}}>Mayor - menor</button></li>
-          <li><button class="nav-link px-2 text-white" onClick={()=>{select("menor")}}>Menor - mayor</button></li>
+          <li><button class="nav-link px-2 text-white" onClick={()=>{select("mayor")}}>Mayor - menor <i class="fa fa-sort" aria-hidden="true"></i></button></li>
+          <li><button class="nav-link px-2 text-white" onClick={()=>{select("menor")}}>Menor - mayor <i class="fa fa-sort" aria-hidden="true"></i></button></li>
         </ul>
     
         <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">

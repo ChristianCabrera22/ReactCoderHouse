@@ -19,8 +19,8 @@ const ItemCart = ({product}) => {
   <td> 
     <div className="input-group">
       <button className="btn btn-outline-secondary" type="button" onClick={() => decreaseCant(product.id)}>-</button>
-      <input type="text" className="form-control" value={product.cant} readOnly/>
-      <button className="btn btn-outline-secondary" type="button" onClick={() => addProduct(product, 1)}>+</button>
+      <input type="text" className="form-control px-1 text-center" value={product.cant} readOnly/>
+      <button className="btn btn-outline-secondary" type="button" onClick={() => addProduct(product, 1,)}>+</button>
     </div>
   </td>
   <td>

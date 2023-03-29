@@ -9,7 +9,6 @@ const contacto = () => {
 
   return (   
     <section className="ftco-section">
-      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"></link>
 		<div className="container">
 			<div className="row justify-content-center">
 				<div className="col-md-6 text-center mb-5">
