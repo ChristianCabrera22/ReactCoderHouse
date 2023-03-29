@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "./static/css/main.a3406da1.css",
-    "main.js": "./static/js/main.331633c6.js",
+    "main.js": "./static/js/main.2104a54d.js",
     "static/js/787.3c262021.chunk.js": "./static/js/787.3c262021.chunk.js",
     "static/media/Montserrat-Bold.ttf": "./static/media/Montserrat-Bold.0915f0a8c3367a6d05ec.ttf",
     "static/media/cabecera2.jpg": "./static/media/cabecera2.1d041ca9bbee69042c8d.jpg",
@@ -13,11 +13,11 @@
     "static/media/diviLogo.png": "./static/media/diviLogo.e7706cc50099877188d4.png",
     "index.html": "./index.html",
     "main.a3406da1.css.map": "./static/css/main.a3406da1.css.map",
-    "main.331633c6.js.map": "./static/js/main.331633c6.js.map",
+    "main.2104a54d.js.map": "./static/js/main.2104a54d.js.map",
     "787.3c262021.chunk.js.map": "./static/js/787.3c262021.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.a3406da1.css",
-    "static/js/main.331633c6.js"
+    "static/js/main.2104a54d.js"
   ]
 }
