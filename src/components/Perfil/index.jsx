@@ -81,6 +81,7 @@ getDocs(queryFilter)
     }
     console.log("doc.name")
     console.log(nameUser)
+
     return (
         <>
     <button className="btn btn-primary mt-5" onClick={logOff}>Cerrar Sesion</button>
@@ -91,6 +92,26 @@ getDocs(queryFilter)
     )
 
     } else {
+      const lossUser = () =>{
+        Swal.fire({
+          title: 'Ingrese su correo',
+          input: 'email',
+          inputAttributes: {
+            autocapitalize: 'off'
+          },
+          showCancelButton: true,
+          confirmButtonText: 'Enviar',
+          showLoaderOnConfirm: true,
+          allowOutsideClick: () => !Swal.isLoading()
+        }).then((result) => {
+          if (result.isConfirmed) {
+            Swal.fire({
+              icon: 'success',
+              title: `Se envio un correo para recuperar su usuario/contraseña`
+            })
+          }
+        })
+      }
         return (
             <>
               <div className="limiter">
@@ -149,7 +170,7 @@ getDocs(queryFilter)
         
                       <div className="text-center p-t-12">
                         <span className="txt1">Perdio:</span>
-                        <a className="px-1 txt2" href="#">
+                        <a className="px-1 txt2" onClick={()=>{lossUser()}}>
                           Usuario / Contraseña?
                         </a>
                       </div>
