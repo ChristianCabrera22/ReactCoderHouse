@@ -84,10 +84,12 @@ getDocs(queryFilter)
 
     return (
         <>
+        <div className='container'>
     <button className="btn btn-primary mt-5" onClick={logOff}>Cerrar Sesion</button>
-    <PerfilOrders 
-      idUser={localStorage.getItem('loginData')}
-      name={nameUser}/>
+          
+    <Link className={`btn btn-primary mt-5  ${localStorage.getItem('loginData') === '"admin"'? 'enable':'d-none'}` } to="/panel">Panel Admin</Link>
+    <PerfilOrders       idUser={localStorage.getItem('loginData')}      name={nameUser}/>
+    </div>
     </>
     )
 

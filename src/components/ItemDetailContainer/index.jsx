@@ -9,12 +9,6 @@ const ItemDetailContainer = () => {
     const [data,setData]=useState({})
     const {detalleId} = useParams()
     useEffect(()=> {
-        /* const getData=new Promise(resolve => {
-            setTimeout(()=>{
-                resolve(productos)
-            }, 500)
-        })
-        getData.then(res=> setData(res.find(prods=>prods.id===parseInt(detalleId)))) */
         const querydb = getFirestore()
         const queryDoc = doc(querydb, 'products', detalleId)
         getDoc(queryDoc)

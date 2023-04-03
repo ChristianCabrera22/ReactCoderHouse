@@ -13,6 +13,7 @@ import Perfil from './components/Perfil'
 // import './components/styles/style.css'
 import './firebase/config';
 import PerfilNew from './components/PerfilNew';
+import Panel from './components/Panel';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
@@ -29,6 +30,7 @@ root.render(
             <Route path='/contacto' element={<Contacto/>}/>
             <Route path='/perfil' element={<Perfil/>}/>
             <Route path='/registro' element={<PerfilNew/>}/>
+            <Route path='/panel' element={<Panel/>}/>
           </Routes>
           <Footer/>
       </CartProvider>

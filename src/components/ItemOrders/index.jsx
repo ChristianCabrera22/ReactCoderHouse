@@ -17,7 +17,7 @@ const ItemOrders = ({order}) => {
             <div class="row">
               <div class="col-md-12 col-lg-3 col-xl-3 mb-4 mb-lg-0">
                 <div class="bg-image hover-zoom ripple rounded ripple-surface">
-                  <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/img%20(4).webp"
+                  <img src="https://i.ibb.co/Byq2phm/item.jpg"
                     class="w-100" />
                   <a href="#!">
                     <div class="hover-overlay">

@@ -32,6 +32,7 @@ const MenuNav = () => {
         <a className="navbar-brand" href="#">
           <img src={logo} alt="Divi Logo" className={`logo ${window.innerWidth < 957? 'consize' : ''} ${isScrolled ? 'consize' : ''}`} />
         </a>
+        
          <ul className={`navbar-nav navbar-toggler ${isScrolled ? '' : 'd-none'}`}>
             <li className="nav-item ">
                 <div className="nav-link"><NavLink className="nav-link" to='/cart'><CartWidget/></NavLink></div>
@@ -59,7 +60,7 @@ const MenuNav = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 active fs-4" to='/Perfil'><PerfilWidget/></NavLink>
+              <NavLink className="nav-link mx-2 fs-4" to='/Perfil'>Login <PerfilWidget/></NavLink>
             </li>
             <li className="nav-item">
                 <div className="nav-link"><NavLink className="nav-link d-none d-sm-block" to='/cart'><CartWidget/></NavLink></div>
