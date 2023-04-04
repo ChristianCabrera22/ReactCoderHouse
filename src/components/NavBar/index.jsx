@@ -60,7 +60,8 @@ const MenuNav = () => {
               </ul>
             </li>
             <li className="nav-item">
-              <NavLink className="nav-link mx-2 fs-4" to='/Perfil'>Login <PerfilWidget/></NavLink>
+              
+              <NavLink className="nav-link mx-2 fs-4" to='/Perfil'>{localStorage.getItem('loginData')? "Perfil":"Login"} <PerfilWidget/></NavLink>
             </li>
             <li className="nav-item">
                 <div className="nav-link"><NavLink className="nav-link d-none d-sm-block" to='/cart'><CartWidget/></NavLink></div>

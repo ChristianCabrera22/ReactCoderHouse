@@ -11,11 +11,25 @@ Se trata de un ecommerce que permite a los usuarios ver productos, agregarlos al
 | Ver listado de productos | &#10004; |
 | Agregar productos al carrito | &#10004; |
 | Eliminar productos del carrito | &#10004; |
+| Modificar cantidad productos del carrito | &#10004; |
 | Ver detalle del producto | &#10004; |
 | Realizar una compra simulada | &#10004; |
 | Registrar usuarios | &#10004; |
 | Iniciar Sesion | &#10004; |
+| Recuperar contraseña | &#10004; |
 | Ver compras realizadas | &#10004; |
+
+## Panel de Administrador
+
+| Funcion  |  Listo?       |
+|----------|:-------------:|
+| Ver ordenes pendientes | &#10004; |
+| Ver ordenes completas  | &#10004; |
+| Modificar estado ordenes | &#10004; |
+| Imprimir detalles ordenes | &#10004; |
+| Ver usuarios | &#10004; |
+| Modificar contraseña usuarios | &#10004; |
+
 
 ## Dependencias necesarias
 
